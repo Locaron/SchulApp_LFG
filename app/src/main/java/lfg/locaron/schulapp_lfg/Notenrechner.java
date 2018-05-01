@@ -2,7 +2,11 @@ package lfg.locaron.schulapp_lfg;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
+
+import java.util.ArrayList;
 
 public class Notenrechner extends AppCompatActivity {
 
@@ -10,12 +14,21 @@ public class Notenrechner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notenrechner);
-    }
 
+    }
+    private ArrayList<Integer>Mathe = new ArrayList<>();
     private int[] matheMündl = new int[20];
     private int[] matheSchrif = new int[20];
 
-    int addNoteMathe(View view){
-    return 0;
+    private void addNote(View v){
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        //arraylists?/2 cursor?
+        switch(v.getId()){
+            case R.id.Mathe :
+                String test = input.getText().toString();
+                Mathe.add(Integer.parseInt(test));
+                break;
+        }
     }
 }
