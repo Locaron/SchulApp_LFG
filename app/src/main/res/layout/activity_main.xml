@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context="lfg.locaron.schulapp_lfg.MainActivity">
 
+    <activity
+        android:name="Notenrechner"
+        android:label="@string/SchulApp_LFG">
+    </activity>
 
     <TextView
         android:layout_width="wrap_content"

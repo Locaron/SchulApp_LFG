@@ -25,7 +25,7 @@ public class Notenrechner extends AppCompatActivity {
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
         //arraylists?/2 cursor?
         switch(v.getId()){
-            case R.id.Mathe :
+            case R.id.MatheXD:
                 String test = input.getText().toString();
                 Mathe.add(Integer.parseInt(test));
                 break;
