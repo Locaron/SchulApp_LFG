@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button buttonToNotenrechner;
+    Button buttonToSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,21 @@ public class MainActivity extends AppCompatActivity {
                 toNotenrechnerMain(view);
             }
         });
+        buttonToSettings = (Button) findViewById(R.id.buttonToSettings);
+        buttonToSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toSettings(view);
+            }
+        });
+
     }
     private void toNotenrechnerMain(View view){
         Intent intent = new Intent(this, NotenrechnerMain.class);
+        startActivity(intent);
+    }
+    private void toSettings(View view) {
+        Intent intent = new Intent(this , SettingsActivity.class);
         startActivity(intent);
     }
 }
