@@ -1,4 +1,4 @@
-package lfg.locaron.schulapp_lfg;
+package lfg.locaron.schulapp_lfg.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
