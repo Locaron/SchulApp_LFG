@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 //Diese Klasse erstellt die Datenbank
 
-public class SQLHelper extends SQLiteOpenHelper {
+public class SQLHelperNoten extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "newf";
+    public static final String DB_NAME = "db_noten";
     public static final String TABLE_NOTEN = "noten";
 
     public static final String COLUMN_ID = "_id";
@@ -22,7 +22,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                     COLUMN_SCHRIFTLICH + " TEXT);";                    //column
 
 
-    public SQLHelper(Context context) {
+    public SQLHelperNoten(Context context) {
         super(context, DB_NAME, null, 1);
     }
 
@@ -33,8 +33,6 @@ public class SQLHelper extends SQLiteOpenHelper {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
 
     @Override

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import lfg.locaron.schulapp_lfg.R;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     Button buttonToNotenrechner;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 toStundenplan(view);
             }
         });
+
 
     }
     private void toNotenrechnerMain(View view){
