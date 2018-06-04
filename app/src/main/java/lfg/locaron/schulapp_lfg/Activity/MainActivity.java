@@ -1,10 +1,11 @@
-package lfg.locaron.schulapp_lfg;
+package lfg.locaron.schulapp_lfg.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import lfg.locaron.schulapp_lfg.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         buttonToSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toSettings(view);
+                toStundenplan(view);
             }
         });
 
@@ -36,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NotenrechnerMain.class);
         startActivity(intent);
     }
-    private void toSettings(View view) {
-        Intent intent = new Intent(this , SettingsActivity.class);
+    private void toStundenplan(View view) {
+        Intent intent = new Intent(this , Stundenplan.class);
         startActivity(intent);
     }
 }
