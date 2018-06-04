@@ -3,7 +3,7 @@ package lfg.locaron.schulapp_lfg.SQLite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SQLData {
+public class NotenData {
 
 
     List<Integer> muendlich;
@@ -11,14 +11,14 @@ public class SQLData {
     int id;
 
     /************ Constructor ******************/
-    public SQLData(List<Integer> muendlich, List<Integer> schriftlich, int id) {
+    public NotenData(List<Integer> muendlich, List<Integer> schriftlich, int id) {
         this.muendlich = muendlich;
         this.schriftlich = schriftlich;
         this.id = id;
     }
 
 
-    public SQLData(String muendlich, String schriftlich, int id){
+    public NotenData(String muendlich, String schriftlich, int id){
         this.muendlich = stringToLIst(muendlich);
         this.schriftlich = stringToLIst(schriftlich);
         this.id = id;
