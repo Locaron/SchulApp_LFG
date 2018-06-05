@@ -70,7 +70,7 @@ public class Stundenplan extends AppCompatActivity {
     public void onCreateContextMenu (ContextMenu menu, View
             view, ContextMenu.ContextMenuInfo menuInfo){
         //Context menu
-        menu.setHeaderTitle("My Context Menu");
+        menu.setHeaderTitle("Fächer Auswahl");
         menu.add(Menu.NONE, CONTEXT_MENU_FRANZOESISCH, Menu.NONE, "Französisch");
         menu.add(Menu.NONE, CONTEXT_MENU_ENGLISCH, Menu.NONE, "Englisch");
         menu.add(Menu.NONE, CONTEXT_MENU_DEUTSCH, Menu.NONE, "Deutsch");
