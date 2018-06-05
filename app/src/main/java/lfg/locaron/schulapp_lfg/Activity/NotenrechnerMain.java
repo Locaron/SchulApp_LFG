@@ -22,6 +22,7 @@ public class NotenrechnerMain extends AppCompatActivity {
         database = new SQLNoten(this);
     }
 
+    /*************** get Data*****************/
     public List<Integer> getMuendlich(int fach){
         database.open();
         NotenData data  = database.read(fach);
@@ -36,6 +37,7 @@ public class NotenrechnerMain extends AppCompatActivity {
         database.close();
         return data.getSchriftlich();
     }
+
 
     public void showData(int fach){
         System.out.println(getFach(fach)); //show data
@@ -71,5 +73,6 @@ public class NotenrechnerMain extends AppCompatActivity {
             default: return "gg you fcked up";
         }
     }
+
 
 }

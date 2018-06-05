@@ -54,7 +54,7 @@ public class SQLNoten {
 
     /************ delete ************/
     public void delete(String table, int id){
-        database.delete(table, SQLHelperNoten.COLUMN_ID + " " + id, null);
+        database.delete(table, SQLHelperNoten.COLUMN_ID + "=" + id, null);
     }
 
     /************* rewrite *****************/
@@ -65,7 +65,7 @@ public class SQLNoten {
         values.put(SQLHelperNoten.COLUMN_MUENDLICH, data.listToString(data.muendlich));
         values.put(SQLHelperNoten.COLUMN_SCHRIFTLICH, data.listToString(data.schriftlich));
 
-        database.update(SQLHelperNoten.TABLE_NOTEN, values, SQLHelperNoten.COLUMN_ID + " " + data.id, null);
+        database.update(SQLHelperNoten.TABLE_NOTEN, values, SQLHelperNoten.COLUMN_ID + "=" + data.id, null);
     }
 
 
