@@ -13,6 +13,7 @@ import lfg.locaron.schulapp_lfg.SQLite.SQLNoten;
 public class NotenrechnerMain extends AppCompatActivity {
 
     SQLNoten database;
+    int[] verhältnis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,84 @@ public class NotenrechnerMain extends AppCompatActivity {
         return data.getSchriftlich();
     }
 
+    /*************** Calculate ******************/
+    public void adaptToClass(int klasse, char zweig) {
+        if (zweig == 'n') { //naturwissenchaftliich
+            switch (klasse) {
+                case 5:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1 (schriftlich: mündlich); index hängt vom fach ab
+                    break;
+                case 6:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 7:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 8:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 9:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 10:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 11:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 12:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+            }
+        } else { //sprachlich
+            switch (klasse) {
+                case 5:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1 (schriftlich: mündlich); index hängt vom fach ab
+                    break;
+                case 6:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 7:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 8:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 9:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 10:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 11:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+                case 12:
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
+                    break;
+            }
 
+        }
+    }
+
+    public float calcAverage(List<Integer> list){
+        int addedUp = 0;
+        for (int i = 0;i < list.size(); i++){
+            addedUp += list.get(i);
+        }
+        return addedUp / list.size();
+    }
+    public float calc2zu1(List<Integer> muendlich, List<Integer> schriftlich){
+        return (calcAverage(muendlich) + 2*calcAverage(schriftlich)) / 3;
+    }
+
+    public float calc1zu1(List<Integer> muendlich, List<Integer> schriftlich){
+        return (calcAverage(muendlich) + calcAverage(schriftlich)) / 2;
+    }
+
+
+
+    /************* show data *****************/
     public void showData(int fach){
         System.out.println(getFach(fach)); //show data
         List munedlich = getMuendlich(fach);
@@ -49,6 +127,12 @@ public class NotenrechnerMain extends AppCompatActivity {
         List schriftlich = getSchriftlich(fach);
         for (int i = 0; i <schriftlich.size(); i++){
             System.out.println(schriftlich.get(i)); // show data
+        }
+
+        if (verhältnis[fach] == 0){
+            System.out.println(calc1zu1(munedlich, schriftlich));
+        }else{
+            System.out.println(calc2zu1(munedlich, schriftlich));
         }
     }
 
@@ -70,6 +154,7 @@ public class NotenrechnerMain extends AppCompatActivity {
             case Fach.RELIGION: return "Religion";
             case Fach.SPORT: return "Sport";
             case Fach.WR: return "Wirtschaft & Recht";
+            case Fach.ETHIK: return "Ethik";
             default: return "gg you fcked up";
         }
     }
