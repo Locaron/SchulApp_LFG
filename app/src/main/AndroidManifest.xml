@@ -16,8 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.NotenrechnerMain" />
-        <activity android:name=".Activity.NotenrechnerDetails"></activity>
+        <activity android:name=".Activity.NotenrechnerMain"></activity>
+        <activity android:name=".Activity.Stundenplan"></activity>
     </application>
-
 </manifest>
