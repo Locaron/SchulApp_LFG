@@ -18,7 +18,7 @@ public class SQLHelperStundenplan extends SQLiteOpenHelper {
             "CREATE TABLE " + TABLE_STUNDENPLAN +
                     "(" + COLUMN_STUNDE + " INTEGER, " +
                     COLUMN_TAG + " INTEGER, " +
-                    COLUMN_FACH + "INTEGER, " +
+                    COLUMN_FACH + "STRING, " +
                     COLUMN_RAUM + " INTEGER);";
 
 

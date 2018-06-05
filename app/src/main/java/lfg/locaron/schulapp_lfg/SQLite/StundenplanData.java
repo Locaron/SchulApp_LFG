@@ -4,10 +4,10 @@ public class StundenplanData {
 
     int stunde;
     int tag;
-    int raum;
+    String raum;
     int fach;
 
-    public StundenplanData(int stunde, int tag, int raum, int fach) {
+    public StundenplanData(int stunde, int tag, String raum, int fach) {
         this.stunde = stunde;
         this.tag = tag;
         this.raum = raum;
@@ -31,11 +31,11 @@ public class StundenplanData {
         this.tag = tag;
     }
 
-    public int getRaum() {
+    public String getRaum() {
         return raum;
     }
 
-    public void setRaum(int raum) {
+    public void setRaum(String raum) {
         this.raum = raum;
     }
 

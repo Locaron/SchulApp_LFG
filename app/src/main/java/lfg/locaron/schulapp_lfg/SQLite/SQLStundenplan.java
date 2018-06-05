@@ -48,7 +48,7 @@ public class SQLStundenplan {
         //int id = cursor.getInt(idIndex);
         int stunde = cursor.getInt(idStunde);
         int tag = cursor.getInt(idTag);
-        int raum = cursor.getInt(idRaum);
+        String raum = cursor.getString(idRaum);
         int fach = cursor.getInt(idFach);
 
         cursor.close();
