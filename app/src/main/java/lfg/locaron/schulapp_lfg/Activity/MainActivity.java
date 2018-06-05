@@ -13,27 +13,34 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonToNotenrechner;
     Button buttonToSettings;
+    Button buttonToStundenplan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonToNotenrechner = (Button) findViewById(R.id.buttonToNotenrechner);
+        buttonToNotenrechner = (Button) findViewById(R.id.buttonToNotenrechnerMain);
         buttonToNotenrechner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toNotenrechnerMain(view);
             }
         });
-        buttonToSettings = (Button) findViewById(R.id.buttonToSettings);
+        buttonToSettings = (Button) findViewById(R.id.buttonToStundenplan);
         buttonToSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO
+            }
+        });
+        buttonToStundenplan = (Button) findViewById(R.id.buttonToStundenplan);
+        buttonToStundenplan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toStundenplan(view);
             }
         });
-
 
     }
     private void toNotenrechnerMain(View view){

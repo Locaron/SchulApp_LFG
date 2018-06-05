@@ -7,52 +7,48 @@
     tools:context=".Activity.MainActivity">
 
     <Button
-        android:id="@+id/ButtonStundenplan"
+        android:id="@+id/buttonToStundenplan"
         android:layout_width="110dp"
         android:layout_height="440dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/karteikarte"
         android:text="Stundenplan"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonTermine"
+        app:layout_constraintEnd_toStartOf="@+id/buttonToTermine"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.492" />
 
     <Button
-        android:id="@+id/ButtenNoten"
+        android:id="@+id/buttonToNotenrechnerMain"
         android:layout_width="160dp"
         android:layout_height="90dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/karteikarte"
         android:text="Noten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ButtonTermine"
+        android:id="@+id/buttonToTermine"
         android:layout_width="160dp"
         android:layout_height="90dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/karteikarte"
         android:text="Termine"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonSpiel"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToSpiel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtenNoten"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToNotenrechnerMain"
         app:layout_constraintVertical_bias="0.509" />
 
     <Button
-        android:id="@+id/ButtonSpiel"
+        android:id="@+id/buttonToSpiel"
         android:layout_width="160dp"
         android:layout_height="90dp"
         android:layout_marginBottom="92dp"
         android:layout_marginEnd="28dp"
-        android:background="@drawable/karteikarte"
         android:text="Spiel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -63,7 +59,6 @@
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/karteikarte"
         android:text="Einstellungen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -17,4 +17,5 @@ public interface Fach {
   int MUSIK = 13;
   int LATEIN = 14;
   int RELIGION = 15;
+  int ETHIK = 16;
 }
