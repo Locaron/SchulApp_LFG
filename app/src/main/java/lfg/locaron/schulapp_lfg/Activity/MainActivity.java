@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 toStundenplan(view);
             }
         });
-        
+
     }
     private void toNotenrechnerMain(View view){
         Intent intent = new Intent(this, NotenrechnerMain.class);
