@@ -10,28 +10,12 @@ import android.view.View;
 import android.widget.Button;
 
 import lfg.locaron.schulapp_lfg.R;
+import lfg.locaron.schulapp_lfg.SQLite.Fach;
 
 public class Stundenplan extends AppCompatActivity {
 
     // Faecher werden in die activity hinzugefügt
 
-    final int CONTEXT_MENU_FRANZOESISCH =0;
-    final int CONTEXT_MENU_ENGLISCH = 1;
-    final int CONTEXT_MENU_DEUTSCH = 2;
-    final int CONTEXT_MENU_MATHE =3;
-    final int CONTEXT_MENU_PHYSIK =4;
-    final int CONTEXT_MENU_CHEMIE =5;
-    final int CONTEXT_MENU_BIOLOGIE =6;
-    final int CONTEXT_MENU_INFORMATIK =7;
-    final int CONTEXT_MENU_NUT =8;
-    final int CONTEXT_MENU_WIRTSCHAFT =9;
-    final int CONTEXT_MENU_ERDKUNDE =10;
-    final int CONTEXT_MENU_SPORT =11;
-    final int CONTEXT_MENU_KUNST =12;
-    final int CONTEXT_MENU_MUSIK =13;
-    final int CONTEXT_MENU_LATEIN =14;
-    final int CONTEXT_MENU_RELIGION =15;
-    final int CONTEXT_MENU_ETHIK =16;
 
 
 
@@ -70,23 +54,23 @@ public class Stundenplan extends AppCompatActivity {
     public void onCreateContextMenu (ContextMenu menu, View
             view, ContextMenu.ContextMenuInfo menuInfo){
         //Context menu
-        menu.setHeaderTitle("My Context Menu");
-        menu.add(Menu.NONE, CONTEXT_MENU_FRANZOESISCH, Menu.NONE, "Französisch");
-        menu.add(Menu.NONE, CONTEXT_MENU_ENGLISCH, Menu.NONE, "Englisch");
-        menu.add(Menu.NONE, CONTEXT_MENU_DEUTSCH, Menu.NONE, "Deutsch");
-        menu.add(Menu.NONE, CONTEXT_MENU_MATHE, Menu.NONE, "Mathe");
-        menu.add(Menu.NONE, CONTEXT_MENU_PHYSIK, Menu.NONE, "Physik");
-        menu.add(Menu.NONE, CONTEXT_MENU_CHEMIE, Menu.NONE, "Chemie");
-        menu.add(Menu.NONE, CONTEXT_MENU_BIOLOGIE, Menu.NONE, "Biologie");
-        menu.add(Menu.NONE, CONTEXT_MENU_INFORMATIK, Menu.NONE, "Informatik");
-        menu.add(Menu.NONE, CONTEXT_MENU_NUT, Menu.NONE, "Natur&Technik");
-        menu.add(Menu.NONE, CONTEXT_MENU_WIRTSCHAFT, Menu.NONE, "Wirtschaft&Recht");
-        menu.add(Menu.NONE, CONTEXT_MENU_ERDKUNDE, Menu.NONE, "Erdkunde");
-        menu.add(Menu.NONE, CONTEXT_MENU_SPORT, Menu.NONE, "Sport");
-        menu.add(Menu.NONE, CONTEXT_MENU_KUNST, Menu.NONE, "Kunst");
-        menu.add(Menu.NONE, CONTEXT_MENU_LATEIN, Menu.NONE, "Latein");
-        menu.add(Menu.NONE, CONTEXT_MENU_RELIGION, Menu.NONE, "Religion");
-        menu.add(Menu.NONE, CONTEXT_MENU_ETHIK, Menu.NONE, "Ethik");
+        menu.setHeaderTitle("Fächerauswahl");
+        menu.add(Menu.NONE, Fach.FRANZOESISCH, Menu.NONE, "Französisch");
+        menu.add(Menu.NONE, Fach.ENGLISCH, Menu.NONE, "Englisch");
+        menu.add(Menu.NONE, Fach.DEUTSCH, Menu.NONE, "Deutsch");
+        menu.add(Menu.NONE, Fach.MATHE, Menu.NONE, "Mathe");
+        menu.add(Menu.NONE, Fach.PHYSIK, Menu.NONE, "Physik");
+        menu.add(Menu.NONE, Fach.CHEMIE, Menu.NONE, "Chemie");
+        menu.add(Menu.NONE, Fach.BIOLOGIE, Menu.NONE, "Biologie");
+        menu.add(Menu.NONE, Fach.INFORMATIK, Menu.NONE, "Informatik");
+        menu.add(Menu.NONE, Fach.NuT, Menu.NONE, "Natur&Technik");
+        menu.add(Menu.NONE, Fach.WR, Menu.NONE, "Wirtschaft&Recht");
+        menu.add(Menu.NONE, Fach.ERDKUNDE, Menu.NONE, "Erdkunde");
+        menu.add(Menu.NONE, Fach.SPORT, Menu.NONE, "Sport");
+        menu.add(Menu.NONE, Fach.KUNST, Menu.NONE, "Kunst");
+        menu.add(Menu.NONE, Fach.LATEIN, Menu.NONE, "Latein");
+        menu.add(Menu.NONE, Fach.RELIGION, Menu.NONE, "Religion");
+        menu.add(Menu.NONE, Fach.ETHIK, Menu.NONE, "Ethik");
         buttonID = view.getId();
     }
 
@@ -98,84 +82,84 @@ public class Stundenplan extends AppCompatActivity {
         // TODO Auto-generated method stub
 
         switch (item.getItemId()) {
-            case CONTEXT_MENU_FRANZOESISCH: {
+            case Fach.FRANZOESISCH: {
                 Button button = findViewById(buttonID);
                 button.setText("Fr");
                 break;
             }
-            case CONTEXT_MENU_ENGLISCH: {
+            case Fach.ENGLISCH: {
                 Button button = findViewById(buttonID);
                 button.setText("E");
                 break;
             }
-            case CONTEXT_MENU_DEUTSCH: {
+            case Fach.DEUTSCH: {
                 Button button = findViewById(buttonID);
                 button.setText("D");
                 break;
             }
-            case CONTEXT_MENU_MATHE: {
+            case Fach.MATHE: {
                 Button button = findViewById(buttonID);
                 button.setText("M");
                 break;
             }
-            case CONTEXT_MENU_PHYSIK: {
+            case Fach.PHYSIK: {
                 Button button = findViewById(buttonID);
                 button.setText("Ph");
                 break;
             }
-            case CONTEXT_MENU_CHEMIE: {
+            case Fach.CHEMIE: {
                 Button button = findViewById(buttonID);
                 button.setText("Ch");
                 break;
             }
-            case CONTEXT_MENU_BIOLOGIE: {
+            case Fach.BIOLOGIE: {
                 Button button = findViewById(buttonID);
                 button.setText("Bio");
                 break;
             }
-            case CONTEXT_MENU_INFORMATIK: {
+            case Fach.INFORMATIK: {
                 Button button = findViewById(buttonID);
                 button.setText("Inf");
                 break;
             }
-            case CONTEXT_MENU_NUT: {
+            case Fach.NuT: {
                 Button button = findViewById(buttonID);
                 button.setText("NuT");
                 break;
             }
-            case CONTEXT_MENU_WIRTSCHAFT: {
+            case Fach.WR: {
                 Button button = findViewById(buttonID);
                 button.setText("WR");
                 break;
             }
-            case CONTEXT_MENU_ERDKUNDE: {
+            case Fach.ERDKUNDE: {
                 Button button = findViewById(buttonID);
                 button.setText("Geo");
                 break;
             }
-            case CONTEXT_MENU_SPORT: {
+            case Fach.SPORT: {
                 Button button = findViewById(buttonID);
                 button.setText("Sp");
                 break;
             }
-            case CONTEXT_MENU_KUNST: {
+            case Fach.KUNST: {
                 Button button = findViewById(buttonID);
                 button.setText("Ku");
                 break;
             }
-            case CONTEXT_MENU_MUSIK: {
+            case Fach.MUSIK: {
                 Button button = findViewById(buttonID);
                 button.setText("Mu");
                 break;
-            }case CONTEXT_MENU_LATEIN: {
+            }case Fach.LATEIN: {
                 Button button = findViewById(buttonID);
                 button.setText("L");
                 break;
-            }case CONTEXT_MENU_RELIGION: {
+            }case Fach.RELIGION: {
                 Button button = findViewById(buttonID);
                 button.setText("Reli");
                 break;
-            }case CONTEXT_MENU_ETHIK: {
+            }case Fach.ETHIK: {
                 Button button = findViewById(buttonID);
                 button.setText("Eth");
                 break;
