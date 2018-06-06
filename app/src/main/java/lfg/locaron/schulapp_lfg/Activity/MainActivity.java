@@ -5,8 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import lfg.locaron.schulapp_lfg.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import lfg.locaron.schulapp_lfg.R;
+import lfg.locaron.schulapp_lfg.SQLite.Fach;
+import lfg.locaron.schulapp_lfg.SQLite.NotenData;
+import lfg.locaron.schulapp_lfg.SQLite.SQLNoten;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 toStundenplan(view);
             }
         });
-
     }
     private void toNotenrechnerMain(View view){
         Intent intent = new Intent(this, NotenrechnerMain.class);

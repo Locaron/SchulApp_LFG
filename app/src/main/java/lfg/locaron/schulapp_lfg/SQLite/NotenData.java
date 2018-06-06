@@ -1,6 +1,7 @@
 package lfg.locaron.schulapp_lfg.SQLite;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class NotenData {
@@ -24,8 +25,14 @@ public class NotenData {
         this.id = id;
     }
 
+    public NotenData(String test){
+    }
+
     /*************** Converter ****************/
     public String listToString(List<Integer> list){
+        if (list.size() == 0){
+            return "";
+        }
         String substring = "";
         for (int i = 0; i < list.size(); i++) {
             substring += list.get(i) + ", ";
@@ -34,6 +41,9 @@ public class NotenData {
     }
 
     public List<Integer> stringToLIst(String str){
+        if (str.equals("")){
+            return null;
+        }
         char[] string = str.toCharArray();
         String substring = "";
         List<Integer> list = new ArrayList<>();
