@@ -1,5 +1,6 @@
 package lfg.locaron.schulapp_lfg.Activity;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextWatcher;
@@ -7,7 +8,10 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import lfg.locaron.schulapp_lfg.R;
 import lfg.locaron.schulapp_lfg.SQLite.Fach;
@@ -23,6 +27,7 @@ public class Stundenplan extends AppCompatActivity {
     private int buttonID;
     private Button fach11;
     private Button raum11;
+    private TextView raumNummer; // hier wird die neue raumnummer reingeschrieben
 
     // in onCreate werden die Faecher in dem sogenannten CONTEXT_MENU hinzugefügt
     // (stundenplan -> auf ein fach -> genau das Menu)
@@ -44,7 +49,7 @@ public class Stundenplan extends AppCompatActivity {
         raum11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //changeRaum(view);
+                changeRaum(view);
             }
         });
 
@@ -173,4 +178,7 @@ public class Stundenplan extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    private void changeRaum(View view){
+        Button button = findViewById(view.getId());
+    }
 }
