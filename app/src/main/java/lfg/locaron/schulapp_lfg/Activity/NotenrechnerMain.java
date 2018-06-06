@@ -1,7 +1,10 @@
 package lfg.locaron.schulapp_lfg.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -14,13 +17,27 @@ public class NotenrechnerMain extends AppCompatActivity {
 
     SQLNoten database;
     int[] verhältnis;
+    Button buttonAddNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notenrechner_main);
 
+        buttonAddNote = (Button) findViewById(R.id.buttonAddNote);
+        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jumpToDetails(view);
+            }
+        });
+
         database = new SQLNoten(this);
+    }
+
+    /*************** jumpToDetails *******************/
+    public void jumpToDetails(View view){
+        startActivity(new Intent(this, NotenrechnerDetails.class));
     }
 
     /*************** get Data*****************/
@@ -44,7 +61,7 @@ public class NotenrechnerMain extends AppCompatActivity {
         if (zweig == 'n') { //naturwissenchaftliich
             switch (klasse) {
                 case 5:
-                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1 (schriftlich: mündlich); index hängt vom fach ab
+                    verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; -1 -> man hat das fach nicht; (schriftlich: mündlich); index hängt vom fach ab
                     break;
                 case 6:
                     verhältnis = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //0 -> 1:1; 1 -> 2:1; index hängt vom fach ab
@@ -118,20 +135,20 @@ public class NotenrechnerMain extends AppCompatActivity {
 
     /************* show data *****************/
     public void showData(int fach){
-        System.out.println(getFach(fach)); //show data
-        List munedlich = getMuendlich(fach);
+        System.out.println(getFach(fach)); //show fach
+        List<Integer> munedlich = getMuendlich(fach);
         for (int i = 0; i <munedlich.size(); i++){
-            System.out.println(munedlich.get(i)); // show data
+            System.out.println(munedlich.get(i)); // show muendliche Noten
         }
 
         List schriftlich = getSchriftlich(fach);
         for (int i = 0; i <schriftlich.size(); i++){
-            System.out.println(schriftlich.get(i)); // show data
+            System.out.println(schriftlich.get(i)); // show schriftliche Noten
         }
 
         if (verhältnis[fach] == 0){
             System.out.println(calc1zu1(munedlich, schriftlich));
-        }else{
+        }else{                                                          //show durchschnitt
             System.out.println(calc2zu1(munedlich, schriftlich));
         }
     }

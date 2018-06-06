@@ -4,6 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
+
+import java.util.Date;
+import java.util.List;
 
 public class SQLNoten {
 
@@ -35,6 +39,23 @@ public class SQLNoten {
         database.insert(SQLHelperNoten.TABLE_NOTEN, null, values);
     }
 
+    public void writeMuendlich(List<Integer> muendlich, int id){
+        ContentValues values = new ContentValues();
+        values.put(SQLHelperNoten.COLUMN_ID, id);
+        NotenData data = new NotenData("blub");
+        values.put(SQLHelperNoten.COLUMN_MUENDLICH, data.listToString(muendlich));
+        values.put(SQLHelperNoten.COLUMN_SCHRIFTLICH, " ");
+        database.insert(SQLHelperNoten.TABLE_NOTEN, null, values);
+    }
+
+    public void writeSchriftlich(List<Integer> schriftlich, int id){
+        ContentValues values = new ContentValues();
+        values.put(SQLHelperNoten.COLUMN_ID, id);
+        NotenData data = new NotenData("blub");
+        values.put(SQLHelperNoten.COLUMN_SCHRIFTLICH, data.listToString(schriftlich));
+        values.put(SQLHelperNoten.COLUMN_MUENDLICH, " ");
+        database.insert(SQLHelperNoten.TABLE_NOTEN, null, values);
+    }
     /**************** read *******************/
     public NotenData read(int searchID){
         Cursor cursor = database.query(SQLHelperNoten.TABLE_NOTEN,null, SQLHelperNoten.COLUMN_ID + "=" + searchID, null, null, null, null);
@@ -53,8 +74,8 @@ public class SQLNoten {
     }
 
     /************ delete ************/
-    public void delete(String table, int id){
-        database.delete(table, SQLHelperNoten.COLUMN_ID + "=" + id, null);
+    public void delete(int id){
+        database.delete(SQLHelperNoten.TABLE_NOTEN, SQLHelperNoten.COLUMN_ID + "=" + id, null);
     }
 
     /************* rewrite *****************/
