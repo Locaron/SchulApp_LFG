@@ -1,18 +1,13 @@
 package lfg.locaron.schulapp_lfg.Activity;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import lfg.locaron.schulapp_lfg.R;
 import lfg.locaron.schulapp_lfg.SQLite.Fach;
 
@@ -25,9 +20,10 @@ public class Stundenplan extends AppCompatActivity {
 
 
     private int buttonID;
-    private Button fach11;
-    private Button raum11;
-    private TextView raumNummer; // hier wird die neue raumnummer reingeschrieben
+    private Button fach1;
+    private Button raum1;
+    private EditText raumNummer; // hier wird die neue raumnummer reingeschrieben
+
 
     // in onCreate werden die Faecher in dem sogenannten CONTEXT_MENU hinzugefügt
     // (stundenplan -> auf ein fach -> genau das Menu)
@@ -36,8 +32,8 @@ public class Stundenplan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stundenplan);
-        fach11 = (Button) findViewById(R.id.fach11);
-        fach11.setOnClickListener(new View.OnClickListener() {
+        fach1 = (Button) findViewById(R.id.fach1);
+        fach1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registerForContextMenu(view);
@@ -45,13 +41,16 @@ public class Stundenplan extends AppCompatActivity {
             }
         });
 
-        raum11 = (Button) findViewById((R.id.raum11));
-        raum11.setOnClickListener(new View.OnClickListener() {
+        raum1 = (Button) findViewById((R.id.raum1));
+        raum1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 changeRaum(view);
             }
         });
+
+        raumNummer = (EditText) findViewById(R.id.raumNummer);
+
 
     }
 
@@ -180,5 +179,9 @@ public class Stundenplan extends AppCompatActivity {
 
     private void changeRaum(View view){
         Button button = findViewById(view.getId());
+        button.setText(raumNummer.getText());
+
+
     }
+
 }
