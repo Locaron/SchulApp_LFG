@@ -1,7 +1,10 @@
 package lfg.locaron.schulapp_lfg.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -14,13 +17,27 @@ public class NotenrechnerMain extends AppCompatActivity {
 
     SQLNoten database;
     int[] verhältnis;
+    Button buttonAddNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notenrechner_main);
 
+        buttonAddNote = (Button) findViewById(R.id.buttonAddNote);
+        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jumpToDetails(view);
+            }
+        });
+
         database = new SQLNoten(this);
+    }
+
+    /*************** jumpToDetails *******************/
+    public void jumpToDetails(View view){
+        startActivity(new Intent(this, NotenrechnerDetails.class));
     }
 
     /*************** get Data*****************/
