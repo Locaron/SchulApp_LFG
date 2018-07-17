@@ -8,48 +8,60 @@
 
 
     <Button
-        android:id="@+id/fach1"
-        android:layout_width="140dp"
-        android:layout_height="134dp"
+        android:id="@+id/Montag"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Fach"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/karteikarte"
+        android:text="Montag"
+        app:layout_constraintBottom_toTopOf="@+id/Dienstag"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
 
     <Button
-        android:id="@+id/raum1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/Dienstag"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Raum"
+        android:background="@drawable/karteikarte"
+        android:text="Dienstag"
+        app:layout_constraintBottom_toTopOf="@+id/Mittwoch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Mittwoch"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/karteikarte"
+        android:text="Mittwoch"
+        app:layout_constraintBottom_toTopOf="@+id/Donnerstag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Donnerstag"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/karteikarte"
+        android:text="Donnertag"
+        app:layout_constraintBottom_toTopOf="@+id/Freitag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Freitag"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/karteikarte"
+        android:text="Freitag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
-
-    <EditText
-        android:id="@+id/raumNummer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="RaumNummer"
-        android:imeOptions="actionDone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
