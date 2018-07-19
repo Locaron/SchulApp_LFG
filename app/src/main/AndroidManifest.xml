@@ -19,7 +19,7 @@
         <activity android:name=".Activity.NotenrechnerMain" />
         <activity android:name=".Activity.NotenrechnerDetails" />
         <activity android:name=".Activity.Stundenplan" />
-        <activity android:name=".Tagesueberblick"></activity>
+        <activity android:name=".Activity.Wochenueberblick"></activity>
     </application>
 
 </manifest>

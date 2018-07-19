@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tagesueberblick">
+    tools:context=".Activity.Stundenplan">
 
 
     <Button
@@ -277,6 +277,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Raum"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.829"
@@ -460,7 +461,7 @@
         app:layout_constraintVertical_bias="0.983" />
 
     <Button
-        android:id="@+id/Fach1"
+        android:id="@+id/fach1"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"

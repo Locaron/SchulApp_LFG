@@ -21,8 +21,16 @@ public class Stundenplan extends AppCompatActivity {
 
     private int buttonID;
     private Button fach1;
-    private Button raum1;
-    private EditText raumNummer; // hier wird die neue raumnummer reingeschrieben
+    private Button fach2;
+    private Button fach3;
+    private Button fach4;
+    private Button fach5;
+    private Button fach6;
+    private Button fach7;
+    private Button fach8;
+    private Button fach9;
+    private Button fach10;
+
 
 
     // in onCreate werden die Faecher in dem sogenannten CONTEXT_MENU hinzugefügt
@@ -31,7 +39,7 @@ public class Stundenplan extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stundenplan);
+        setContentView(R.layout.activity_tagesueberblick);
         fach1 = (Button) findViewById(R.id.fach1);
         fach1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +48,78 @@ public class Stundenplan extends AppCompatActivity {
                 openContextMenu(view);
             }
         });
-
-        raum1 = (Button) findViewById((R.id.raum1));
-        raum1.setOnClickListener(new View.OnClickListener() {
+        fach2 = (Button) findViewById(R.id.fach2);
+        fach2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                changeRaum(view);
+            public void onClick(View view)  {
+                registerForContextMenu(view);
+                openContextMenu(view);
             }
         });
-
-        raumNummer = (EditText) findViewById(R.id.raumNummer);
+        fach3 = (Button) findViewById(R.id.fach3);
+        fach3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach4 = (Button) findViewById(R.id.fach4);
+        fach4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach5 = (Button) findViewById(R.id.fach5);
+        fach5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach6 = (Button) findViewById(R.id.fach6);
+        fach6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach7 = (Button) findViewById(R.id.fach7);
+        fach7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach8 = (Button) findViewById(R.id.fach8);
+        fach8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach9 = (Button) findViewById(R.id.fach9);
+        fach9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
+        fach10 = (Button) findViewById(R.id.fach10);
+        fach10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerForContextMenu(view);
+                openContextMenu(view);
+            }
+        });
 
 
     }
@@ -175,13 +245,6 @@ public class Stundenplan extends AppCompatActivity {
         }
 
         return super.onContextItemSelected(item);
-    }
-
-    private void changeRaum(View view){
-        Button button = findViewById(view.getId());
-        button.setText(raumNummer.getText());
-
-
     }
 
 }
